@@ -1,3 +1,5 @@
+using ASP_API_KEY.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -19,6 +21,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+//Middleware
+//app.UseMiddleware<APIKeyMiddleware>();
 
 app.MapControllers();
 
