@@ -1,3 +1,4 @@
+using ASP_API_KEY.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_API_KEY.Controllers
@@ -18,6 +19,7 @@ namespace ASP_API_KEY.Controllers
             _logger = logger;
         }
 
+        [APIKey]
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
